@@ -1,0 +1,28 @@
+<!--
+  index.html — Página inicial (catálogo de itens).
+  Esta página é só a "casca": os 3 divs começam vazios e o JavaScript os preenche.
+-->
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <!-- faz o site se adaptar ao tamanho do celular -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portal de Achados e Perdidos da PUCPR. Consulte objetos encontrados no campus.">
+    <meta name="theme-color" content="#8f003f">
+    <title>Achados e Perdidos | PUCPR</title>
+    <!-- carrega todo o visual (CSS) -->
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div id="cabecalho"></div>   <!-- o JavaScript coloca o menu do topo aqui -->
+    <main>
+      <div id="aviso"></div>     <!-- mensagens de sucesso/erro aparecem aqui -->
+      <div id="conteudo"></div>  <!-- o catálogo inteiro é montado aqui -->
+    </main>
+    <!-- carrega todo o JavaScript do site -->
+    <script src="app.js"></script>
+    <!-- manda montar a página inicial (função que está no app.js) -->
+    <script>montarCatalogo();</script>
+  </body>
+</html>

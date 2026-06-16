@@ -1,0 +1,24 @@
+<!--
+  item.html — Página de detalhe de um item.
+  O item que aparece depende do id na URL, por exemplo: item.html?id=3
+-->
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#8f003f">
+    <title>Item | PUCPR</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div id="cabecalho"></div>   <!-- menu do topo -->
+    <main>
+      <div id="aviso"></div>     <!-- mensagens de sucesso/erro -->
+      <div id="conteudo"></div>  <!-- o detalhe do item é montado aqui -->
+    </main>
+    <script src="app.js"></script>
+    <!-- monta o detalhe do item indicado no ?id= da URL -->
+    <script>montarDetalhe();</script>
+  </body>
+</html>

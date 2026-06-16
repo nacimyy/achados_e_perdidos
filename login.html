@@ -1,0 +1,65 @@
+<!--
+  login.html — Tela de login do funcionário.
+  Diferente das outras páginas, aqui o conteúdo é HTML fixo (não é montado pelo JS).
+  O JavaScript no final só confere o e-mail e a senha.
+-->
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#8f003f">
+    <title>Área do funcionário | PUCPR</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div id="cabecalho"></div>   <!-- menu do topo -->
+    <main>
+      <div id="aviso"></div>     <!-- mensagens de sucesso/erro -->
+      <!-- cartão de login (HTML fixo) -->
+      <section class="login-page">
+        <div class="modal-card login-modal">
+          <div class="modal-header">
+            <div><span class="eyebrow">Acesso restrito</span><h1>Área do funcionário</h1></div>
+          </div>
+          <p class="modal-intro">Entre para cadastrar itens e registrar retiradas. Os dados de demonstração já estão preenchidos.</p>
+          <!-- aviso vermelho que só aparece quando o login está errado -->
+          <p class="form-error" id="erro-login" style="display:none"></p>
+          <!-- ao enviar, chama fazerLogin() (lá embaixo) em vez de recarregar a página -->
+          <form class="stack-form" onsubmit="return fazerLogin(event)">
+            <label class="field">
+              <span>E-mail institucional</span>
+              <input type="email" name="email" value="funcionario@pucpr.br" autocomplete="username" required>
+            </label>
+            <label class="field">
+              <span>Senha</span>
+              <input type="password" name="senha" value="pucpr" autocomplete="current-password" required>
+            </label>
+            <button class="button button-primary button-block" type="submit">Entrar</button>
+            <a class="button button-secondary button-block" href="index.html">Voltar ao catálogo</a>
+          </form>
+        </div>
+      </section>
+    </main>
+    <script src="app.js"></script>
+    <script>
+      // Se já estiver logado, vai direto para o catálogo.
+      if (estaLogado()) location.href = "index.html";
+      prepararPagina();
+
+      // Confere o login. Se acertar, entra; se errar, mostra o aviso vermelho.
+      function fazerLogin(evento) {
+        evento.preventDefault();
+        const form = evento.target;
+        if (entrar(form.email.value, form.senha.value)) {
+          location.href = "index.html?msg=" + encodeURIComponent("Área administrativa liberada.");
+        } else {
+          const erro = document.getElementById("erro-login");
+          erro.textContent = "E-mail ou senha inválidos.";
+          erro.style.display = "";
+        }
+        return false;
+      }
+    </script>
+  </body>
+</html>

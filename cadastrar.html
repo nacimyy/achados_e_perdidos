@@ -1,0 +1,26 @@
+<!--
+  cadastrar.html — Formulário para cadastrar OU editar um item.
+  Sem id na URL  -> cadastro novo.
+  Com ?id=5      -> edição (o formulário já vem preenchido).
+  Só o funcionário logado consegue usar (o app.js checa isso).
+-->
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#8f003f">
+    <title>Cadastrar item | PUCPR</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div id="cabecalho"></div>   <!-- menu do topo -->
+    <main>
+      <div id="aviso"></div>     <!-- mensagens de sucesso/erro -->
+      <div id="conteudo"></div>  <!-- o formulário é montado aqui -->
+    </main>
+    <script src="app.js"></script>
+    <!-- monta o formulário (de cadastro ou de edição) -->
+    <script>montarFormulario();</script>
+  </body>
+</html>
