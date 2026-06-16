@@ -321,7 +321,6 @@ function montarCatalogo() {
           <p>${logado
             ? "Acompanhe os itens sob responsabilidade da equipe, registre retiradas e mantenha o catálogo atualizado."
             : "Consulte os objetos encontrados no campus e veja onde fazer a retirada com segurança."}</p>
-          <p> <a href="https://www.pucpr.br" >Conheça também o site principal da PUCPR</a> </p>
         </div>
         ${logado ? "" : `
           <div class="hero-note">
